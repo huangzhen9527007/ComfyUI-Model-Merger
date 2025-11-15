@@ -47,7 +47,6 @@
    - **model_files**: 输入模型文件路径，每行一个文件路径
    - **output_file**: 设置合并后的模型保存路径
    - **merge_mode**: 选择合并模式（update: 更新合并，replace: 替换）
-   - **model_directory**: 模型文件夹路径
 3. 可选功能：
    - **select_files**: 打开图形化文件选择对话框
    - **select_directory**: 选择文件夹，自动搜索其中的 safetensors 文件

@@ -31,7 +31,7 @@
         "kind": 2,
         "importPath": "loader",
         "description": "loader",
-        "peekOfCode": "def load_mergecore():\n    platforms = {\n        'win32': 'mergecore_win.pyd',\n        'linux': 'mergecore_linux.so', \n        'darwin': 'mergecore_mac.so'\n    }\n    current_platform = sys.platform\n    compiled_file = platforms.get(current_platform)\n    print(f\"✓ : {current_platform}\")\n    print(f\"✓ : {compiled_file}\")",
+        "peekOfCode": "def load_mergecore():\n    platforms = {\n        'win32': 'mergecore.cp312-win_amd64.pyd',\n        'linux': 'mergecore_linux.so', \n        'darwin': 'mergecore_mac.so'\n    }\n    current_platform = sys.platform\n    compiled_file = platforms.get(current_platform)\n    print(f\"✓ : {current_platform}\")\n    print(f\"✓ : {compiled_file}\")",
         "detail": "loader",
         "documentation": {}
     },

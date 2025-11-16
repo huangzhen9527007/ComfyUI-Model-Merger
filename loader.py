@@ -8,7 +8,7 @@ import importlib.util
 
 def load_mergecore():
     platforms = {
-        'win32': 'mergecore_win.pyd',
+        'win32': 'mergecore.cp312-win_amd64.pyd',
         'linux': 'mergecore_linux.so', 
         'darwin': 'mergecore_mac.so'
     }

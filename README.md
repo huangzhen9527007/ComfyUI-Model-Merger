@@ -2,6 +2,12 @@
 
 这是一个用于 ComfyUI 的模型合并插件，提供两种不同的模型合并方式，支持 safetensors 格式的模型文件合并。
 
+## 更新：
+
+### 20251116
+
+**更新Windows平台编译版本：mergecore.cp312-win_amd64.pyd (Windows)，对应python版本3.12**
+
 ## 功能特性
 
 ### 两种合并模式
@@ -50,7 +56,6 @@
 3. 可选功能：
    - **select_files**: 打开图形化文件选择对话框
    - **select_directory**: 选择文件夹，自动搜索其中的 safetensors 文件
-   - **select_output_file**: 选择输出文件保存位置
 4. 点击 "Queue Prompt" 运行工作流
 5. 查看控制台输出，了解合并进度和结果
 

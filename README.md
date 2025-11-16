@@ -7,6 +7,7 @@
 ### 20251116
 
 **更新Windows平台编译版本：mergecore.cp312-win_amd64.pyd (Windows)，对应python版本3.12**
+**添加loader加载器，根据不同平台自动加载对应预编译模块**
 
 ## 功能特性
 

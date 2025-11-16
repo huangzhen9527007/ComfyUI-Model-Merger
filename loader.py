@@ -17,7 +17,7 @@ def load_mergecore():
     compiled_file = platforms.get(current_platform)
     print(f"✓ : {current_platform}")
     print(f"✓ : {compiled_file}")
-    if compiled_file:
+    
         # 加载编译版本
         base_path = os.path.dirname(__file__)
         compiled_path = os.path.join(base_path, compiled_file)
@@ -30,8 +30,8 @@ def load_mergecore():
                 return mergecore_module
             except Exception as e:
                 print(f"⚠️ 加载{compiled_file}编译版本失败: {e}") 
-    else:
-        print(f"⚠️ 缺少必要的编译文件")   
+        else:
+            print(f"⚠️ 缺少必要的编译文件")   
 # 全局导入
 ModelMergeCore = None
 try:

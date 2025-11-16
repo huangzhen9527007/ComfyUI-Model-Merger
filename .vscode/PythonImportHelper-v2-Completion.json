@@ -1,0 +1,47 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "importlib.util",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "importlib.util",
+        "description": "importlib.util",
+        "detail": "importlib.util",
+        "documentation": {}
+    },
+    {
+        "label": "load_mergecore",
+        "kind": 2,
+        "importPath": "loader",
+        "description": "loader",
+        "peekOfCode": "def load_mergecore():\n    platforms = {\n        'win32': 'mergecore_win.pyd',\n        'linux': 'mergecore_linux.so', \n        'darwin': 'mergecore_mac.so'\n    }\n    current_platform = sys.platform\n    compiled_file = platforms.get(current_platform)\n    print(f\"✓ : {current_platform}\")\n    print(f\"✓ : {compiled_file}\")",
+        "detail": "loader",
+        "documentation": {}
+    },
+    {
+        "label": "ModelMergeCore",
+        "kind": 5,
+        "importPath": "loader",
+        "description": "loader",
+        "peekOfCode": "ModelMergeCore = None\ntry:\n    mergecore_module = load_mergecore()\n    ModelMergeCore = getattr(mergecore_module, 'ModelMergeCore')\nexcept Exception as e:\n    print(f\"❌ 无法加载 ModelMergeCore: {e}\")",
+        "detail": "loader",
+        "documentation": {}
+    }
+]

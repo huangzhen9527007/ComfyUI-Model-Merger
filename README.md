@@ -8,7 +8,7 @@
 
 1. **更新主文件model_merger_node.py**
 2. **更新Windows平台编译版本：merge_operations.cp312-win_amd64.pyd (Windows)，对应python版本3.12**
-3. **更新loader.py**
+3. **更新loader，修复loader中代码缩进导致错误问题**
 4. **更新工作流model_merger_workflow.json，添加相关使用说明，详见工作流内**
 5. **更新节点使用说明**
 6. **更新节点相关选择和保存模式的初始默认值**

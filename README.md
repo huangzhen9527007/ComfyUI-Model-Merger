@@ -7,6 +7,7 @@
 ### 20251117
 
 1. **更新主文件model_merger_node.py**
+2. **更新Windows平台编译版本：merge_operations.cp312-win_amd64.pyd (Windows)，对应python版本3.12**
 
 
 ### 20251116

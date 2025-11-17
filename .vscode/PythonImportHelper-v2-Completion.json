@@ -31,7 +31,7 @@
         "kind": 2,
         "importPath": "loader",
         "description": "loader",
-        "peekOfCode": "def load_mergecore():\n    platforms = {\n        'win32': 'mergecore.cp312-win_amd64.pyd',\n        'linux': 'mergecore_linux.so', \n        'darwin': 'mergecore_mac.so'\n    }\n    current_platform = sys.platform\n    compiled_file = platforms.get(current_platform)\n        base_path = os.path.dirname(__file__)\n        compiled_path = os.path.join(base_path, compiled_file)",
+        "peekOfCode": "def load_mergecore():\n    platforms = {\n        'win32': 'mergecore.cp312-win_amd64.pyd',\n        'linux': 'mergecore_linux.so',\n        'darwin': 'mergecore_mac.so'\n    }\n    current_platform = sys.platform\n    compiled_file = platforms.get(current_platform)\n    base_path = os.path.dirname(__file__)\n    compiled_path = os.path.join(base_path, compiled_file)",
         "detail": "loader",
         "documentation": {}
     },
@@ -49,7 +49,7 @@
         "kind": 5,
         "importPath": "loader",
         "description": "loader",
-        "peekOfCode": "ModelMergeCore = None\nGraphicManipulation = None\ntry:\n    mergecore_module = load_mergecore()\n    ModelMergeCore = getattr(mergecore_module, 'ModelMergeCore')\n    print(\"✓ ModelMergeCore 加载成功\")\nexcept Exception as e:\n    print(f\"❌ 无法加载 ModelMergeCore: {e}\")\ntry:\n    graphic_module = load_graphic_manipulation()",
+        "peekOfCode": "ModelMergeCore = None\nGraphicManipulation = None\ntry:\n    mergecore_module = load_mergecore()\n    ModelMergeCore = getattr(mergecore_module, 'ModelMergeCore')\nexcept Exception as e:\n    print(f\"❌ 无法加载 ModelMergeCore: {e}\")\ntry:\n    graphic_module = load_graphic_manipulation()\n    GraphicManipulation = getattr(graphic_module, 'GraphicManipulation')",
         "detail": "loader",
         "documentation": {}
     },
@@ -58,7 +58,7 @@
         "kind": 5,
         "importPath": "loader",
         "description": "loader",
-        "peekOfCode": "GraphicManipulation = None\ntry:\n    mergecore_module = load_mergecore()\n    ModelMergeCore = getattr(mergecore_module, 'ModelMergeCore')\n    print(\"✓ ModelMergeCore 加载成功\")\nexcept Exception as e:\n    print(f\"❌ 无法加载 ModelMergeCore: {e}\")\ntry:\n    graphic_module = load_graphic_manipulation()\n    GraphicManipulation = getattr(graphic_module, 'GraphicManipulation')",
+        "peekOfCode": "GraphicManipulation = None\ntry:\n    mergecore_module = load_mergecore()\n    ModelMergeCore = getattr(mergecore_module, 'ModelMergeCore')\nexcept Exception as e:\n    print(f\"❌ 无法加载 ModelMergeCore: {e}\")\ntry:\n    graphic_module = load_graphic_manipulation()\n    GraphicManipulation = getattr(graphic_module, 'GraphicManipulation')\nexcept Exception as e:",
         "detail": "loader",
         "documentation": {}
     },

@@ -43,5 +43,41 @@
         "peekOfCode": "ModelMergeCore = None\ntry:\n    mergecore_module = load_mergecore()\n    ModelMergeCore = getattr(mergecore_module, 'ModelMergeCore')\nexcept Exception as e:\n    print(f\"❌ 无法加载 ModelMergeCore: {e}\")",
         "detail": "loader",
         "documentation": {}
+    },
+    {
+        "label": "ModelMergerNode",
+        "kind": 6,
+        "importPath": "model_merger_node",
+        "description": "model_merger_node",
+        "peekOfCode": "class ModelMergerNode:\n    \"\"\"\n    模型合并节点，用于合并多个 safetensors 模型文件\n    \"\"\"\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"model_files\": (\"STRING\", {\n                    \"multiline\": True,",
+        "detail": "model_merger_node",
+        "documentation": {}
+    },
+    {
+        "label": "StreamModelMergerNode",
+        "kind": 6,
+        "importPath": "model_merger_node",
+        "description": "model_merger_node",
+        "peekOfCode": "class StreamModelMergerNode:\n    \"\"\"\n    流式模型合并节点 - 流式 safetensors 分片合并（适用于大模型）\n    \"\"\"\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"shard_files\": (\"STRING\", {\n                    \"multiline\": True,",
+        "detail": "model_merger_node",
+        "documentation": {}
+    },
+    {
+        "label": "NODE_CLASS_MAPPINGS",
+        "kind": 5,
+        "importPath": "model_merger_node",
+        "description": "model_merger_node",
+        "peekOfCode": "NODE_CLASS_MAPPINGS = {\n    \"ModelMergerNode\": ModelMergerNode,\n    \"StreamModelMergerNode\": StreamModelMergerNode\n}\nNODE_DISPLAY_NAME_MAPPINGS = {\n    \"ModelMergerNode\": \"模型合并器\",\n    \"StreamModelMergerNode\": \"流式模型合并器\"\n}\nprint(\"✅ 模型合并节点已成功注册\")",
+        "detail": "model_merger_node",
+        "documentation": {}
+    },
+    {
+        "label": "NODE_DISPLAY_NAME_MAPPINGS",
+        "kind": 5,
+        "importPath": "model_merger_node",
+        "description": "model_merger_node",
+        "peekOfCode": "NODE_DISPLAY_NAME_MAPPINGS = {\n    \"ModelMergerNode\": \"模型合并器\",\n    \"StreamModelMergerNode\": \"流式模型合并器\"\n}\nprint(\"✅ 模型合并节点已成功注册\")",
+        "detail": "model_merger_node",
+        "documentation": {}
     }
 ]

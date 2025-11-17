@@ -4,6 +4,11 @@
 
 ## 更新：
 
+### 20251117
+
+1. **更新主文件model_merger_node.py**
+
+
 ### 20251116
 
 1. **更新Windows平台编译版本：mergecore.cp312-win_amd64.pyd (Windows)，对应python版本3.12**

@@ -30,7 +30,7 @@ class ModelMergerNode:
             },
             "optional": {
                 "select_files": ("BOOLEAN", {
-                    "default": False,
+                    "default": True,
                     "label_on": "打开文件选择",
                     "label_off": "关闭文件选择"
                 }),
@@ -40,7 +40,7 @@ class ModelMergerNode:
                     "label_off": "不选择文件夹"
                 }),
                 "select_output_file": ("BOOLEAN", {
-                    "default": False,
+                    "default": True,
                     "label_on": "选择保存位置",
                     "label_off": "不选择保存位置"
                 }),
@@ -97,7 +97,7 @@ class StreamModelMergerNode:
             },
             "optional": {
                 "select_files": ("BOOLEAN", {
-                    "default": False,
+                    "default": True,
                     "label_on": "打开文件选择",
                     "label_off": "关闭文件选择"
                 }),
@@ -107,7 +107,7 @@ class StreamModelMergerNode:
                     "label_off": "不选择文件夹"
                 }),
                 "select_output_file": ("BOOLEAN", {
-                    "default": False,
+                    "default": True,
                     "label_on": "选择保存位置",
                     "label_off": "不选择保存位置"
                 }),

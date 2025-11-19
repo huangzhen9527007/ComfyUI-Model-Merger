@@ -1,3 +1,218 @@
+
+
+# ComfyUI Model Merging Plugin
+
+This is a model merging plugin for ComfyUI, offering two different model merging methods and supporting the merging of safetensors format model files.
+
+## Update:
+
+### 20251119
+
+1. **Updated loader.pyd, fixed the issue of modules failing to load correctly during compilation.**
+
+2. **Updated the Windows platform compilation version: merge_operations.cp312-win_amd64.pyd (Windows), corresponding to Python version 3.12.**
+
+3. **Updated the import code in model_merger_node.py.**
+
+4. **Adjusted and optimized the overall code architecture.**
+
+5. **Updated the node usage instructions.**
+
+### 20251117
+
+1. **Updated the main file model_merger_node.py.**
+
+2. **Updated the Windows platform compilation version: merge_operations.cp312-win_amd64.pyd (Windows), corresponding to Python version 3.12.**
+
+3. **Updated the loader, fixed the error caused by code indentation in the loader.**
+
+4. **Updated the workflow model_merger_workflow.json, added relevant usage instructions, see the workflow for details.**
+
+5. **Updated the node usage instructions.**
+
+6. **Updated initial default values ​​for node-related selections and save modes**
+
+### 20251116
+
+1. **Updated Windows platform compilation version: mergecore.cp312-win_amd64.pyd (Windows), corresponding to Python version 3.12**
+
+2. **Added a loader to automatically load the corresponding pre-compiled modules based on different platforms**
+
+3. **Optimized standard merge mode file loading progress - Displays the current file number and filename being processed, tensor update statistics - Displays the number of tensors added after processing each file and the current total number of tensors**
+
+4. **Updated the judgment logic in loader.py**
+
+5. **Updated Windows platform compilation version: graphic_manipulation.cp312-win_amd64.pyd (Windows), corresponding to Python version 3.12**
+
+## Features
+
+### Two Merging Modes
+
+1. **Standard Model Merger (ModelMergerNode)**
+
+- Directly loads and merges multiple safetensors model files
+
+- Supports update mode (merges all tensors) and replace mode (uses the last file)
+
+- Fast merging for small to medium-sized models
+
+2. **Streaming Model Merger (StreamModelMergerNode)**
+
+- Streaming processing of large model chunks to avoid memory overflow
+
+- Supports chunk copying with customizable chunk size
+
+- Header and encoding optimization
+
+- Safe merging for large models (e.g., multi-GB)
+
+### General Features
+
+- Supports merging multiple safetensors model files
+
+- Provides a user-friendly interface for easily specifying input files and output paths
+
+- Supports graphical file selection (requires tkinter)
+
+- Detailed log output showing merging progress and results
+
+- Supports custom output paths
+
+## Installation Method
+
+Method 1 (This method is no longer needed):
+
+1. Ensure ComfyUI is installed
+
+2. Copy this plugin directory to the `custom_nodes` folder in ComfyUI
+
+3. Install dependencies:
+
+```
+pip install safetensors
+
+```
+For graphical file selection functionality, also install:
+```
+
+pip install tk
+
+```
+4. Restart ComfyUI
+
+Method 2: Download the node file compressed package, extract it to the current folder, and you will get a folder named ComfyUI-Model-Merger (Note: if you open it directly and it contains a ComfyUI-Model-Merger folder instead of node files, copy the ComfyUI-Model-Merger folder inside to ensure that the ComfyUI-Model-Merger folder contains node files). Then copy the ComfyUI-Model-Merger folder to ComfyUI\custom_nodes.
+
+## Usage Instructions
+
+### Standard Model Merger
+
+1. In ComfyUI, find the "Model Merger" node in the "Model Tools" category.
+
+2. Set the following parameters in the node:
+
+- **model_files**: Enter the model file paths, one file path per line.
+
+- **output_file**: Set the save path for the merged model.
+
+- **merge_mode**: Select the merge mode (update: Update and merge, replace: Replace)
+
+3. Optional functions:
+
+- **select_files**: Opens a graphical file selection dialog
+
+- **select_directory**: Selects a folder, automatically searching for safetensors files within it
+
+- **select_output_file**: Selects the output file save location
+
+4. Click "Queue Prompt" to run the workflow
+
+5. View the console output to understand the merge progress and results
+
+### Streaming Model Merger
+
+1. In ComfyUI, find the "Streaming Model Merger" node from the "Model Tools" category
+
+2. Set the following parameters in the node:
+
+- **shard_files**: Enter the shard file paths, one file path per line (arranged in order)
+
+- **output_file**: Sets the save path for the merged model
+
+- **chunk_size_mb**: Sets the chunk size (MB) for handling large files
+
+3. Optional functions:
+
+- **select_files**: Opens a graphical file selection dialog
+
+- **select_directory**: Select a folder to automatically search for safetensors files.
+
+- **select_output_file**: Select the location to save the output file.
+
+4. Click "Queue Prompt" to run the workflow.
+
+5. View the console output to understand the merge progress and results.
+
+## Workflow Example
+
+This plugin includes a sample workflow file `model_merger_workflow.json`, which you can load in ComfyUI to get started quickly.
+
+See the workflow documentation for detailed usage instructions.
+
+## Selection Recommendations
+
+- **Small to Medium-Sized Models** (< 20GB): Use the standard model merger for faster speed.
+
+- **Large Models** (≥ 20GB): Use the streaming model merger to avoid memory overflow.
+
+- **Sharded Model Files**: Use the streaming model merger, specifically optimized for this scenario.
+
+## Notes
+
+- Ensure all input model files exist and are accessible.
+
+- Merging large models may take longer and require sufficient memory.
+
+- The merged model will be saved in the output path you specify.
+
+- If the output directory does not exist, the plugin will create it automatically.
+
+- The streaming merger performs file verification to ensure the integrity of the merged result.
+
+- For sharded files, ensure the files are arranged in the correct order.
+
+## Troubleshooting
+
+- If you encounter the `No module named 'safetensors'` error, ensure the safetensors library is installed.
+
+- If the file path is incorrect, check the path format and ensure correct backslash escaping (use `\\` on Windows).
+
+- If the merge fails, check if the model file format is correct and if they are all in safetensors format. If you encounter an out-of-memory error, please use the streaming model merger and reduce the `chunk_size_mb` parameter.
+
+- If you cannot use graphical file selection, please install tkinter: `pip install tk`
+
+- If the streaming merge process is interrupted, please check if you have sufficient disk space.
+
+## Technical Features
+
+### Advantages of the Streaming Merger
+
+- Automatic handling of header size changes
+
+- Chunky copying to avoid large file memory consumption
+
+- Complete file verification mechanism
+
+- Detailed progress display and error handling
+
+### Performance Optimization
+
+- Intelligent memory management to promptly release unused tensors
+
+- Support for large file chunk processing
+
+- Automatic path normalization and error checking
+
+
 # ComfyUI 模型合并插件
 
 这是一个用于 ComfyUI 的模型合并插件，提供两种不同的模型合并方式，支持 safetensors 格式的模型文件合并。

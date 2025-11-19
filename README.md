@@ -100,7 +100,8 @@ pip install tk
 ```
 4. Restart ComfyUI
 
-Method 2: Download the node file compressed package, extract it to the current folder, and you will get a folder named ComfyUI-Model-Merger (Note: if you open it directly and it contains a ComfyUI-Model-Merger folder instead of node files, copy the ComfyUI-Model-Merger folder inside to ensure that the ComfyUI-Model-Merger folder contains node files). Then copy the ComfyUI-Model-Merger folder to ComfyUI\custom_nodes.
+Method 2: 
+Download the node file compressed package, extract it to the current folder, and you will get a folder named ComfyUI-Model-Merger (note that if you open it directly and it contains a ComfyUI-Model-Merger folder instead of node files, copy the ComfyUI-Model-Merger folder inside to ensure that the ComfyUI-Model-Merger folder contains node files). Copy the ComfyUI-Model-Merger folder to ComfyUI\custom_nodes, and copy model_merger_workflow.json to ComfyUI\user\default\workflows.
 
 ## Usage Instructions
 
@@ -282,7 +283,9 @@ See the workflow documentation for detailed usage instructions.
 4. 重启 ComfyUI
 
 方法二：
-下载节点文件压缩包，解压缩到当前文件夹，得到文件夹ComfyUI-Model-Merger（特别注意，直接打开后里面如果是ComfyUI-Model-Merger文件夹，而不是节点文件，则复制里面的那个文件夹ComfyUI-Model-Merger，确保ComfyUI-Model-Merger文件夹打开后直接就是节点文件），然后拷贝ComfyUI-Model-Merger文件夹放至ComfyUI\custom_nodes中
+下载节点文件压缩包，解压缩到当前文件夹，得到文件夹ComfyUI-Model-Merger（特别注意，直接打开后里面如果是ComfyUI-Model-Merger文件夹，而不是节点文件，则复制里面的那个文件夹ComfyUI-Model-Merger，确保ComfyUI-Model-Merger文件夹打开后直接就是节点文件），
+拷贝ComfyUI-Model-Merger文件夹放至ComfyUI\custom_nodes中，
+拷贝model_merger_workflow.json放入ComfyUI\user\default\workflows中。
 
 ## 使用说明
 

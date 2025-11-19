@@ -53,6 +53,7 @@
 
 ## 安装方法
 
+方法一（此方法已不需要）：
 1. 确保已安装 ComfyUI
 2. 将此插件目录复制到 ComfyUI 的 `custom_nodes` 文件夹中
 3. 安装依赖：
@@ -64,6 +65,9 @@
    pip install tk
    ```
 4. 重启 ComfyUI
+
+方法二：
+下载节点文件压缩包，解压缩到当前文件夹，得到文件夹ComfyUI-Model-Merger（特别注意，直接打开后里面如果是ComfyUI-Model-Merger文件夹，而不是节点文件，则复制里面的那个文件夹ComfyUI-Model-Merger，确保ComfyUI-Model-Merger文件夹打开后直接就是节点文件），然后拷贝ComfyUI-Model-Merger文件夹放至ComfyUI\custom_nodes中
 
 ## 使用说明
 

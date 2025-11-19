@@ -3,7 +3,15 @@
 """
 
 # 导入操作实现
-from .merge_operations import execute_merge_models, execute_stream_merge_models
+#from .merge_operations import execute_merge_models, execute_stream_merge_models
+
+# 使用加载器统一导入所有功能
+from .loader import (
+    #ModelMergeCore, 
+    #GraphicManipulation,
+    execute_merge_models, 
+    execute_stream_merge_models
+)
 
 class ModelMergerNode:
     """
@@ -70,8 +78,8 @@ class ModelMergerNode:
 
 class StreamModelMergerNode:
     """
-    流式模型合并节点 - 流式 safetensors 分片合并（适用于大模型）
-    
+    流式模型合并节点 - 使用纯 torch 流式 safetensors 分片合并（适用于大模型）
+    支持自动处理Header大小变化，分块复制，防止内存溢出
     """
     
     @classmethod

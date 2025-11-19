@@ -76,7 +76,7 @@
         "kind": 6,
         "importPath": "model_merger_node",
         "description": "model_merger_node",
-        "peekOfCode": "class StreamModelMergerNode:\n    \"\"\"\n    流式模型合并节点 - 流式 safetensors 分片合并（适用于大模型）\n    \"\"\"\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"shard_files\": (\"STRING\", {\n                    \"multiline\": True,",
+        "peekOfCode": "class StreamModelMergerNode:\n    \"\"\"\n    流式模型合并节点 - 使用纯 torch 流式 safetensors 分片合并（适用于大模型）\n    支持自动处理Header大小变化，分块复制，防止内存溢出\n    \"\"\"\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"shard_files\": (\"STRING\", {",
         "detail": "model_merger_node",
         "documentation": {}
     },

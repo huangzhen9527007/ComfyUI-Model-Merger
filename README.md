@@ -4,6 +4,14 @@
 
 ## 更新：
 
+### 20251119
+
+1. **更新loader.pyd，修复模块编译无法正确加载问题**
+2. **更新Windows平台编译版本：merge_operations.cp312-win_amd64.pyd (Windows)，对应python版本3.12**
+3. **更新model_merger_node.py导入部分代码**
+4. **调整优化整体代码架构**
+5. **更新节点使用说明**
+
 ### 20251117
 
 1. **更新主文件model_merger_node.py**

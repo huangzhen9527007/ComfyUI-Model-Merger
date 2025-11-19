@@ -22,7 +22,7 @@
         "kind": 5,
         "importPath": "model_merger_node",
         "description": "model_merger_node",
-        "peekOfCode": "NODE_CLASS_MAPPINGS = {\n    \"ModelMergerNode\": ModelMergerNode,\n    \"StreamModelMergerNode\": StreamModelMergerNode\n}\nNODE_DISPLAY_NAME_MAPPINGS = {\n    \"ModelMergerNode\": \"模型合并器\",\n    \"StreamModelMergerNode\": \"流式模型合并器\"\n}\nprint(\"✅ 模型合并节点已成功注册\")",
+        "peekOfCode": "NODE_CLASS_MAPPINGS = {\n    \"ModelMergerNode\": ModelMergerNode,\n    \"StreamModelMergerNode\": StreamModelMergerNode\n}\nNODE_DISPLAY_NAME_MAPPINGS = {\n    \"ModelMergerNode\": \"模型合并器\",\n    \"StreamModelMergerNode\": \"流式模型合并器\"\n}",
         "detail": "model_merger_node",
         "documentation": {}
     },
@@ -31,7 +31,7 @@
         "kind": 5,
         "importPath": "model_merger_node",
         "description": "model_merger_node",
-        "peekOfCode": "NODE_DISPLAY_NAME_MAPPINGS = {\n    \"ModelMergerNode\": \"模型合并器\",\n    \"StreamModelMergerNode\": \"流式模型合并器\"\n}\nprint(\"✅ 模型合并节点已成功注册\")",
+        "peekOfCode": "NODE_DISPLAY_NAME_MAPPINGS = {\n    \"ModelMergerNode\": \"模型合并器\",\n    \"StreamModelMergerNode\": \"流式模型合并器\"\n}",
         "detail": "model_merger_node",
         "documentation": {}
     }

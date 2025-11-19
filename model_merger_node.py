@@ -154,5 +154,3 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "ModelMergerNode": "模型合并器",
     "StreamModelMergerNode": "流式模型合并器"
 }
-
-print("✅ 模型合并节点已成功注册")

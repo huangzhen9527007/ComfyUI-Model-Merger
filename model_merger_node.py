@@ -1,11 +1,3 @@
-"""
-模型合并节点 - 用于合并多个 safetensors 模型文件
-"""
-
-# 导入操作实现
-#from .merge_operations import execute_merge_models, execute_stream_merge_models
-
-# 使用加载器统一导入所有功能
 from .loader import (
     #ModelMergeCore, 
     #GraphicManipulation,
@@ -14,10 +6,6 @@ from .loader import (
 )
 
 class ModelMergerNode:
-    """
-    模型合并节点，用于合并多个 safetensors 模型文件
-    """
-    
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -62,9 +50,6 @@ class ModelMergerNode:
     DISPLAY_NAME = "模型合并器"
     
     def merge_models(self, model_files, output_file, merge_mode="update", select_files=False, select_directory=False, select_output_file=False):
-        """
-        调用外部实现执行模型合并
-        """
         try:
             result_file = execute_merge_models(
                 model_files, output_file, merge_mode, 
@@ -73,15 +58,9 @@ class ModelMergerNode:
             return (result_file,)
         except Exception as e:
             print(f"合并过程出错: {str(e)}")
-            # 返回错误信息而不是抛出异常，避免ComfyUI崩溃
             return (f"错误: {str(e)}",)
 
 class StreamModelMergerNode:
-    """
-    流式模型合并节点 - 使用纯 torch 流式 safetensors 分片合并（适用于大模型）
-    支持自动处理Header大小变化，分块复制，防止内存溢出
-    """
-    
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -129,9 +108,6 @@ class StreamModelMergerNode:
     DISPLAY_NAME = "流式模型合并器"
     
     def stream_merge_models(self, shard_files, output_file, chunk_size_mb=64, select_files=False, select_directory=False, select_output_file=False):
-        """
-        调用外部实现执行流式模型合并
-        """
         try:
             result_file = execute_stream_merge_models(
                 shard_files, output_file, chunk_size_mb,
@@ -143,8 +119,7 @@ class StreamModelMergerNode:
             import traceback
             traceback.print_exc()
             return (f"错误: {str(e)}",)
-
-# 节点映射
+            
 NODE_CLASS_MAPPINGS = {
     "ModelMergerNode": ModelMergerNode,
     "StreamModelMergerNode": StreamModelMergerNode

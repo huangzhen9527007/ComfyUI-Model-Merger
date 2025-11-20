@@ -4,7 +4,7 @@
         "kind": 6,
         "importPath": "model_merger_node",
         "description": "model_merger_node",
-        "peekOfCode": "class ModelMergerNode:\n    \"\"\"\n    模型合并节点，用于合并多个 safetensors 模型文件\n    \"\"\"\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"model_files\": (\"STRING\", {\n                    \"multiline\": True,",
+        "peekOfCode": "class ModelMergerNode:\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"model_files\": (\"STRING\", {\n                    \"multiline\": True,\n                    \"default\": \"diffusion_pytorch_model-00001-of-00007.safetensors\\ndiffusion_pytorch_model-00002-of-00007.safetensors\\ndiffusion_pytorch_model-00003-of-00007.safetensors\\ndiffusion_pytorch_model-00004-of-00007.safetensors\\ndiffusion_pytorch_model-00005-of-00007.safetensors\\ndiffusion_pytorch_model-00006-of-00007.safetensors\\ndiffusion_pytorch_model-00007-of-00007.safetensors\",\n                    \"placeholder\": \"输入模型文件路径，每行一个\"\n                }),",
         "detail": "model_merger_node",
         "documentation": {}
     },
@@ -13,7 +13,7 @@
         "kind": 6,
         "importPath": "model_merger_node",
         "description": "model_merger_node",
-        "peekOfCode": "class StreamModelMergerNode:\n    \"\"\"\n    流式模型合并节点 - 使用纯 torch 流式 safetensors 分片合并（适用于大模型）\n    支持自动处理Header大小变化，分块复制，防止内存溢出\n    \"\"\"\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"shard_files\": (\"STRING\", {",
+        "peekOfCode": "class StreamModelMergerNode:\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"shard_files\": (\"STRING\", {\n                    \"multiline\": True,\n                    \"default\": \"diffusion_pytorch_model-00001-of-00007.safetensors\\ndiffusion_pytorch_model-00002-of-00007.safetensors\\ndiffusion_pytorch_model-00003-of-00007.safetensors\\ndiffusion_pytorch_model-00004-of-00007.safetensors\\ndiffusion_pytorch_model-00005-of-00007.safetensors\\ndiffusion_pytorch_model-00006-of-00007.safetensors\\ndiffusion_pytorch_model-00007-of-00007.safetensors\",\n                    \"placeholder\": \"输入分片文件路径，每行一个，按顺序排列\"\n                }),",
         "detail": "model_merger_node",
         "documentation": {}
     },

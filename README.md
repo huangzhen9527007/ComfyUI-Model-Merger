@@ -283,7 +283,7 @@ See the workflow documentation for detailed usage instructions.
 4. 重启 ComfyUI
 
 方法二：
-下载节点文件压缩包，解压缩到当前文件夹，得到文件夹ComfyUI-Model-Merger（特别注意，直接打开后里面如果是ComfyUI-Model-Merger文件夹，而不是节点文件，则复制里面的那个文件夹ComfyUI-Model-Merger，确保ComfyUI-Model-Merger文件夹打开后直接就是节点文件），
+下载节点文件压缩包，解压缩到当前文件夹，得到文件夹ComfyUI-Model-Merger（特别注意，直接打开后里面如果是ComfyUI-Model-Merger文件夹，而不是多个pyd、py文件，则复制里面的那个文件夹ComfyUI-Model-Merger，确保ComfyUI-Model-Merger文件夹打开后直接就是多个pyd、py文件），
 拷贝ComfyUI-Model-Merger文件夹放至ComfyUI\custom_nodes中，
 拷贝model_merger_workflow.json放入ComfyUI\user\default\workflows中。
 

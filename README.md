@@ -1,3 +1,5 @@
+<img width="1920" height="918" alt="c702d66a8d8375bac0b797283ce4fe6c" src="https://github.com/user-attachments/assets/8a2e4dc3-24e5-4bfe-a5ab-8e04c79712eb" />
+
 # ComfyUI Model Merging Plugin
 
 This is a model merging plugin for ComfyUI, offering two different model merging methods and supporting the merging of safetensors format model files.

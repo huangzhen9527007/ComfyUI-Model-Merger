@@ -6,6 +6,9 @@ This is a model merging plugin for ComfyUI, offering two different model merging
 
 ## Update:
 
+### 20251130
+1. **Added support for Python 3.11, Python 3.10，Python 3.9 and Python 3.8 for better compatibility**
+
 ### 20251120
 
 1. **Optimized module code structure, updated mergecore.cp312-win_amd64.pyd, loader.cp312-win_amd64.pyd, merge_operations.cp312-win_amd64.pyd, and graphic_manipulation.cp312-win_amd64.pyd**
@@ -233,6 +236,9 @@ See the workflow for detailed usage instructions.
 这是一个用于 ComfyUI 的模型合并插件，提供两种不同的模型合并方式，支持 safetensors 格式的模型文件合并。
 
 ## 更新：
+
+### 20251130
+1. **增加了对python3.11、python3.10、python3.9和python3.8的支持，兼容性更好**
 
 ### 20251120
 
